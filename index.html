@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai360 - Construction Quality Tracking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .sai-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div class="flex items-center py-4 px-2">
+                        <span class="font-semibold text-gray-900 text-2xl">SAI360</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="#" class="py-4 px-2 text-blue-600 font-semibold">Home</a>
+                    <a href="#" class="py-4 px-2 text-gray-500 hover:text-blue-600">Features</a>
+                    <a href="#" class="py-4 px-2 text-gray-500 hover:text-blue-600">Dashboard</a>
+                    <a href="#" class="py-4 px-2 text-gray-500 hover:text-blue-600">Contact</a>
+                    <a href="#" class="py-2 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="sai-gradient text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl font-bold mb-6">Construction Quality Tracking Made Simple</h1>
+            <p class="text-xl mb-8">Real-time quality findings and improvement tracking for every team member</p>
+            <button class="bg-white text-blue-600 font-bold py-3 px-6 rounded-full hover:bg-gray-100 transition duration-300">Get Started</button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">Key Features</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Feature 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-search fa-3x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Quality Findings</h3>
+                    <p class="text-gray-600">Identify and document quality issues in real-time across all construction sites.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-chart-line fa-3x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Tracking Dashboard</h3>
+                    <p class="text-gray-600">Monitor quality metrics and improvement progress with interactive dashboards.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-users fa-3x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Team Collaboration</h3>
+                    <p class="text-gray-600">Assign and track quality issues with your entire team in one platform.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">Interactive Quality Tracker</h2>
+            <div class="bg-gray-100 p-8 rounded-lg">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Submit Quality Finding</h3>
+                        <form id="qualityForm" class="space-y-4">
+                            <div>
+                                <label class="block text-gray-700 mb-2">Project</label>
+                                <select class="w-full px-4 py-2 border rounded-md">
+                                    <option>Select Project</option>
+                                    <option>Highrise Tower A</option>
+                                    <option>Commercial Complex B</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Issue Type</label>
+                                <select class="w-full px-4 py-2 border rounded-md">
+                                    <option>Select Issue Type</option>
+                                    <option>Structural</option>
+                                    <option>Electrical</option>
+                                    <option>Plumbing</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Description</label>
+                                <textarea class="w-full px-4 py-2 border rounded-md" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="bg-blue-600 text-white py-2 px-6 rounded-md hover:bg-blue-700 transition duration-300">Submit Finding</button>
+                        </form>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Recent Findings</h3>
+                        <div class="space-y-4" id="findingsList">
+                            <div class="bg-white p-4 rounded-md shadow">
+                                <div class="flex justify-between">
+                                    <span class="font-semibold">Structural Issue</span>
+                                    <span class="text-sm text-gray-500">Highrise Tower A</span>
+                                </div>
+                                <p class="text-gray-600 mt-2">Concrete curing not meeting specifications in section 4B</p>
+                                <div class="flex justify-between mt-2">
+                                    <span class="text-sm text-blue-600">Assigned to: John D.</span>
+                                    <span class="text-sm text-gray-500">2 days ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">SAI360</h3>
+                    <p>Construction quality tracking and improvement platform for modern teams.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-400">Home</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Features</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-400">About Us</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Contact</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Connect</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-blue-400"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="hover:text-blue-400"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="hover:text-blue-400"><i class="fab fa-facebook fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p>&copy; 2023 SAI360. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Interactive form submission
+        document.getElementById('qualityForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Quality finding submitted successfully!');
+            // In a real app, this would send data to backend
+        });
+    </script>
+</body>
+</html>
